@@ -3,7 +3,12 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/app",
-    "types": []
+    "types": [],
+    "baseUrl": "src",
+    "paths": {
+      "@reactive-form/*": ["app/*"],
+      "@assets/*": ["assets/*"]
+    }
   },
   "files": [
     "src/main.ts",
