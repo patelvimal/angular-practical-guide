@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { FormService } from '../../srevices/form.service';
+import { FormService } from '../../services/form.service';
 
 @Component({
     selector: 'app-basic',
