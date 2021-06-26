@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { FormService } from '../../srevices/form.service';
 
 @Component({
-  selector: 'app-basic',
-  templateUrl: './basic.component.html',
-  styleUrls: ['./basic.component.scss']
+    selector: 'app-basic',
+    templateUrl: './basic.component.html',
+    styleUrls: ['./basic.component.scss']
 })
 export class BasicComponent implements OnInit {
+    public personForm: FormGroup = new FormGroup({});
 
-  constructor() { }
+    constructor(public formService: FormService) {}
 
-  ngOnInit(): void {
-  }
-
+    ngOnInit(): void {
+        this.personForm = this.formService.getBasicForm();
+    }
 }
