@@ -5,6 +5,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormService } from '@reactive-forms/services/form.service';
 import { MaterialModule } from '../../material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+    HttpClientTestingModule,
+    HttpTestingController
+} from '@angular/common/http/testing';
 
 describe('BasicComponent', () => {
     let component: BasicComponent;
@@ -12,7 +16,12 @@ describe('BasicComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [ReactiveFormsModule, MaterialModule, BrowserAnimationsModule],
+            imports: [
+                ReactiveFormsModule,
+                MaterialModule,
+                BrowserAnimationsModule,
+                HttpClientTestingModule
+            ],
             declarations: [BasicComponent],
             providers: [FormService]
         }).compileComponents();

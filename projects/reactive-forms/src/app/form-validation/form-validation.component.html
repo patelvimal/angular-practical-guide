@@ -14,6 +14,7 @@
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
+            <app-file-upload></app-file-upload>
             <label id="example-radio-group-label">Gender</label>
             <mat-radio-group formControlName="gender" class="example-radio-group">
                 <mat-radio-button
@@ -24,6 +25,7 @@
                     {{ gender }}
                 </mat-radio-button>
             </mat-radio-group>
+
             <mat-form-field appearance="fill">
                 <mat-label>Country</mat-label>
                 <mat-select formControlName="country">
@@ -45,5 +47,10 @@
         </mat-card-actions>
     </mat-card>
 </form>
+<div>
+    {{ userForm.value | json }}
+</div>
 
-{{ userForm.value | json }}
+<div>
+    {{ userName.errors | json }}
+</div>

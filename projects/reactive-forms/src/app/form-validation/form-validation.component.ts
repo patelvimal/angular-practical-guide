@@ -16,6 +16,10 @@ export class FormValidationComponent implements OnInit {
     ];
     constructor(public formService: FormService) {}
 
+    get userName() {
+        return this.userForm.controls['name'];
+    }
+
     ngOnInit(): void {
         this.userForm = this.formService.getCustomerForm();
     }

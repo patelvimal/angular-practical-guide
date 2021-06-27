@@ -8,11 +8,19 @@ import { AppComponent } from './app.component';
 import { BasicComponent } from './basic/basic/basic.component';
 import { MaterialModule } from './material.module';
 import { FormValidationComponent } from './form-validation/form-validation.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-    declarations: [AppComponent, BasicComponent, FormValidationComponent],
+    declarations: [
+        AppComponent,
+        BasicComponent,
+        FormValidationComponent,
+        FileUploadComponent
+    ],
     imports: [
         CommonModule,
+        HttpClientModule,
         BrowserModule,
         ReactiveFormsModule,
         AppRoutingModule,

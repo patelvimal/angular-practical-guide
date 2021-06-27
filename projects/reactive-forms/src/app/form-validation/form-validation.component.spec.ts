@@ -5,7 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@reactive-forms/material.module';
 import { FormService } from '@reactive-forms/services/form.service';
-
+import {
+    HttpClientTestingModule,
+    HttpTestingController
+} from '@angular/common/http/testing';
 import { FormValidationComponent } from './form-validation.component';
 
 describe('FormValidationComponent', () => {
@@ -19,7 +22,8 @@ describe('FormValidationComponent', () => {
                 BrowserModule,
                 ReactiveFormsModule,
                 MaterialModule,
-                BrowserAnimationsModule
+                BrowserAnimationsModule,
+                HttpClientTestingModule
             ],
             declarations: [FormValidationComponent],
             providers: [FormService]
