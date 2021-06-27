@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BasicComponent } from './basic.component';
-import { FormService } from '../../services/form.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormService } from '@reactive-forms/services/form.service';
 
 describe('BasicComponent', () => {
     let component: BasicComponent;

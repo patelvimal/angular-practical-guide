@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { FormService } from '../../services/form.service';
+import { FormService } from '@reactive-forms/services/form.service';
 
 @Component({
     selector: 'app-basic',
