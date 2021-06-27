@@ -7,9 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BasicComponent } from './basic/basic/basic.component';
 import { MaterialModule } from './material.module';
+import { FormValidationComponent } from './form-validation/form-validation.component';
 
 @NgModule({
-    declarations: [AppComponent, BasicComponent],
+    declarations: [AppComponent, BasicComponent, FormValidationComponent],
     imports: [
         CommonModule,
         BrowserModule,

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Injectable({
     providedIn: 'root'
@@ -11,6 +11,16 @@ export class FormService {
         return this.fb.group({
             firstName: [''],
             lastName: ['']
+        });
+    }
+
+    getCustomerForm() {
+        return this.fb.group({
+            name: ['', [Validators.required]],
+            dateOfBirth: ['', [Validators.required]],
+            gender: ['', [Validators.required]],
+            country: ['', [Validators.required]],
+            consent: ['', [Validators.required]]
         });
     }
 }
