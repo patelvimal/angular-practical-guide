@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@reactive-forms/material.module';
@@ -10,6 +10,7 @@ import {
     HttpTestingController
 } from '@angular/common/http/testing';
 import { FormValidationComponent } from './form-validation.component';
+import { FileUploadComponent } from '../file-upload/file-upload.component';
 
 describe('FormValidationComponent', () => {
     let component: FormValidationComponent;
@@ -25,9 +26,21 @@ describe('FormValidationComponent', () => {
                 BrowserAnimationsModule,
                 HttpClientTestingModule
             ],
-            declarations: [FormValidationComponent],
+            declarations: [FormValidationComponent, FileUploadComponent],
             providers: [FormService]
-        }).compileComponents();
+        })
+            .overrideComponent(FileUploadComponent, {
+                set: {
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: FileUploadComponent,
+                            multi: true
+                        }
+                    ]
+                }
+            })
+            .compileComponents();
     });
 
     beforeEach(() => {

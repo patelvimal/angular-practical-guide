@@ -34,7 +34,8 @@ export class FormService {
             dateOfBirth: ['', [Validators.required]],
             gender: ['', [Validators.required]],
             country: ['', [Validators.required]],
-            consent: ['', [Validators.required]]
+            consent: ['', [Validators.required]],
+            fileName: ['', [Validators.required]]
         });
     }
 }
