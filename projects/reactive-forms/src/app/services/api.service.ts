@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { mergeMap, delay, takeUntil } from 'rxjs/operators';
+import { Observable, of, throwError } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -10,7 +10,10 @@ export class ApiService {
     constructor(httpClient: HttpClient) {}
 
     uploadFiles(files: any): Observable<any> {
-        console.log(files);
+        const validFile = files[0].name;
+        if (validFile.indexOf('.png') === -1) {
+            return throwError('Not a Number');
+        }
         return of({ status: 'file upload successfully' }).pipe(delay(2000));
     }
 

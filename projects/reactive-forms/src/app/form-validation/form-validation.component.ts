@@ -20,6 +20,10 @@ export class FormValidationComponent implements OnInit {
         return this.userForm.controls['name'];
     }
 
+    get fileName() {
+        return this.userForm.controls['fileName'];
+    }
+
     ngOnInit(): void {
         this.userForm = this.formService.getCustomerForm();
     }
