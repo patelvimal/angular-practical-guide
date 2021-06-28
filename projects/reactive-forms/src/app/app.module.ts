@@ -10,13 +10,15 @@ import { MaterialModule } from './material.module';
 import { FormValidationComponent } from './form-validation/form-validation.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TypeSafeFormComponent } from './type-safe-form/type-safe-form.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         BasicComponent,
         FormValidationComponent,
-        FileUploadComponent
+        FileUploadComponent,
+        TypeSafeFormComponent
     ],
     imports: [
         CommonModule,
