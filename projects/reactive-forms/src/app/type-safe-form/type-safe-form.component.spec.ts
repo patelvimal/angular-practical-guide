@@ -1,18 +1,15 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { BasicComponent } from './basic.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormService } from '@reactive-forms/services/form.service';
-import { MaterialModule } from '../../material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-    HttpClientTestingModule,
-    HttpTestingController
-} from '@angular/common/http/testing';
+import { MaterialModule } from '@reactive-forms/material.module';
+import { FormService } from '@reactive-forms/services/form.service';
 
-describe('BasicComponent', () => {
-    let component: BasicComponent;
-    let fixture: ComponentFixture<BasicComponent>;
+import { TypeSafeFormComponent } from './type-safe-form.component';
+
+describe('TypeSafeFormComponent', () => {
+    let component: TypeSafeFormComponent;
+    let fixture: ComponentFixture<TypeSafeFormComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
@@ -22,13 +19,13 @@ describe('BasicComponent', () => {
                 BrowserAnimationsModule,
                 HttpClientTestingModule
             ],
-            declarations: [BasicComponent],
+            declarations: [TypeSafeFormComponent],
             providers: [FormService]
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(BasicComponent);
+        fixture = TestBed.createComponent(TypeSafeFormComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

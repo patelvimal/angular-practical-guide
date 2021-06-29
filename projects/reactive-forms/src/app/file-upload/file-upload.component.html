@@ -1,0 +1,11 @@
+<mat-form-field appearance="fill" class="example-full-width">
+    <mat-label *ngIf="selectedFile; else newFile">{{ fileName }}</mat-label>
+    <ng-template #newFile>
+        <mat-label>Choose file</mat-label>
+    </ng-template>
+    <input matInput disabled />
+    <button mat-mini-fab matSuffix (click)="onFileClick(fileInput)">
+        <mat-icon>attach_file</mat-icon>
+    </button>
+    <input hidden (change)="selectFile($event)" #fileInput type="file" id="file" />
+</mat-form-field>

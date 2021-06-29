@@ -3,11 +3,11 @@ import { FormGroup } from '@angular/forms';
 import { FormService } from '@reactive-forms/services/form.service';
 
 @Component({
-    selector: 'app-basic',
-    templateUrl: './basic.component.html',
-    styleUrls: ['./basic.component.scss']
+    selector: 'app-type-safe-form',
+    templateUrl: './type-safe-form.component.html',
+    styleUrls: ['./type-safe-form.component.scss']
 })
-export class BasicComponent implements OnInit {
+export class TypeSafeFormComponent implements OnInit {
     public personForm: FormGroup = new FormGroup({});
 
     constructor(public formService: FormService) {}
