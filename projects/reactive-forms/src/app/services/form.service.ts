@@ -7,6 +7,8 @@ import {
 } from '@angular/forms';
 import { userNameValidator } from '../validation/userName.validator';
 import { ApiService } from './api.service';
+import { FormGroupConfig } from '../formgroup.type';
+import { Person } from '@reactive-forms/type-safe-form/type-safe-form.model';
 
 @Injectable({
     providedIn: 'root'
@@ -15,10 +17,13 @@ export class FormService {
     constructor(public fb: FormBuilder, public apiService: ApiService) {}
 
     getBasicForm() {
-        return this.fb.group({
+        const form: FormGroupConfig<Person> = {
             firstName: [''],
-            lastName: ['']
-        });
+            lastName: [''],
+            age: [0],
+            isValid: [false]
+        };
+        return this.fb.group(form);
     }
 
     getCustomerForm() {
