@@ -7,18 +7,28 @@ import {
 } from '@angular/forms';
 import { userNameValidator } from '../validation/userName.validator';
 import { ApiService } from './api.service';
+import { Person } from '@reactive-forms/type-safe-form/type-safe-form.model';
+import { IFormBuilder } from '@rxweb/types';
+import { Employee } from '@reactive-forms/type-safe-form-using-pkg/type-safe-form.model';
+import { FormGroupConfig } from '@reactive-forms/formgroup.type';
 
 @Injectable({
     providedIn: 'root'
 })
 export class FormService {
-    constructor(public fb: FormBuilder, public apiService: ApiService) {}
+    formBuilder: IFormBuilder;
+    constructor(public fb: FormBuilder, public apiService: ApiService) {
+        this.formBuilder = fb;
+    }
 
     getBasicForm() {
-        return this.fb.group({
+        const form: FormGroupConfig<Person> = {
             firstName: [''],
-            lastName: ['']
-        });
+            lastName: [''],
+            age: [0],
+            isValid: [false]
+        };
+        return this.fb.group(form);
     }
 
     getCustomerForm() {
@@ -36,6 +46,13 @@ export class FormService {
             country: ['', [Validators.required]],
             consent: ['', [Validators.required]],
             fileName: ['', [Validators.required]]
+        });
+    }
+
+    getEmployeeForm() {
+        return this.formBuilder.group<Employee>({
+            firstName: ['', [Validators.required]],
+            lastName: ['']
         });
     }
 }

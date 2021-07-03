@@ -11,6 +11,8 @@ import { FormValidationComponent } from './form-validation/form-validation.compo
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TypeSafeFormComponent } from './type-safe-form/type-safe-form.component';
+import { TypeSafeFormUsingPkgComponent } from './type-safe-form-using-pkg/type-safe-form-using-pkg.component';
+import { FormArrayComponent } from './form-array/form-array.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +20,9 @@ import { TypeSafeFormComponent } from './type-safe-form/type-safe-form.component
         BasicComponent,
         FormValidationComponent,
         FileUploadComponent,
-        TypeSafeFormComponent
+        TypeSafeFormComponent,
+        TypeSafeFormUsingPkgComponent,
+        FormArrayComponent
     ],
     imports: [
         CommonModule,
