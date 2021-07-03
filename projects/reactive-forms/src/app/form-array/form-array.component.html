@@ -1,0 +1,42 @@
+<form [formGroup]="form">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>Form Arrray</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div>
+                <div formArrayName="productList">
+                    <ng-container
+                        *ngFor="let productItem of productList.controls; let i = index"
+                    >
+                        <div class="form-row" [formGroupName]="i">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>First Name</mat-label>
+                                <input
+                                    matInput
+                                    formControlName="firstName"
+                                    autocomplete="off"
+                                />
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Last Name</mat-label>
+                                <input
+                                    matInput
+                                    formControlName="lastName"
+                                    autocomplete="off"
+                                />
+                            </mat-form-field>
+                            <button mat-mini-fab (click)="removeProduct(i)">
+                                <mat-icon class="add-course-btn">delete</mat-icon>
+                            </button>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="primary" mat-raised-button>SAVE</button>
+            <button mat-button (click)="addProduct()">ADD</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
